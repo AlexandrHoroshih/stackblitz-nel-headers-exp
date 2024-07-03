@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello Express!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Hello Express!</h1>
+    <p>Showing <code>pages/index.html</code></p>
+    <script type="module">
+      await new Promise((r) => setTimeout(r, 300));
+      fetch('/normal').then(console.log, console.error);
+      fetch('/fail').then(console.log, console.error);
+      // cors
+      fetch(
+        'https://waa-pa.clients6.google.com/$rpc/google.internal.waa.v1.Waa/Ping'
+      ).then(console.log, console.error);
+
+      // test
+      fetch(
+        'https://stackblitzstartersmykgk9-p2sq--3010--70dbe416.local-credentialless.webcontainer.io/report',
+        { method: 'POST', body: JSON.stringify({ test: 'test' }) }
+      );
+    </script>
+  </body>
+</html>
